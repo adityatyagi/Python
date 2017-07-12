@@ -27,14 +27,15 @@
 
 
 # input the ip address
-
 ipAddress = input('Enter the IP Address: ')
-#ipAddress = "192.168"
-#print(ipAddress)
+
+if ipAddress:
+    if ipAddress[-1] != '.':
+        ipAddress += '.'
 
 segment = 1
 segmentLength = 0
-char = ""
+#char = ""
 
 for char in ipAddress:
     if char == '.':
@@ -45,8 +46,11 @@ for char in ipAddress:
     else:
         segmentLength += 1
 
+if ipAddress == '':
+    print('Blank IP')
+
 # unless the final character in the string wasnt '.', we havent printed the last character
-if char != '.':
-    print(' Segment {0} contains {1} characters'.format(segment, segmentLength))
+#if char != '.':
+    #print(' Segment {0} contains {1} characters'.format(segment, segmentLength))
 
 
